@@ -39,11 +39,33 @@ func replaceBlank(str: String) -> String {
 }
 
 func testReplaceBlank() {
-    let src = "We are happy"
-    
-    let result = replaceBlank(src)
-    
+    var src = "We are happy"
+    var result = replaceBlank(src)
     assert("We%20are%20happy" == result)
+    
+    src = " are happy"
+    result = replaceBlank(src)
+    assert("%20are%20happy" == result)
+    
+    src = "We are "
+    result = replaceBlank(src)
+    assert("We%20are%20" == result)
+    
+    src = "Wearehappy"
+    result = replaceBlank(src)
+    assert("Wearehappy" == result)
+   
+    src = ""
+    result = replaceBlank(src)
+    assert("" == result)
+    
+    src = " "
+    result = replaceBlank(src)
+    assert("%20" == result)
+    
+    src = "   "
+    result = replaceBlank(src)
+    assert("%20%20%20" == result)
 }
 
 testReplaceBlank()

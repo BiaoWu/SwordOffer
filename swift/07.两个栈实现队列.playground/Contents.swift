@@ -28,10 +28,8 @@ class Queue<T> {
     }
     
     func deleteHead() -> T? {
-        var item = stack1.pop()
-        while item != nil {
-            stack2.push(item!)
-            item = stack1.pop()
+        while let item = stack1.pop() {
+            stack2.push(item)
         }
         return stack2.pop()
     }

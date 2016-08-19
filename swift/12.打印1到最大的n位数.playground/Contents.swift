@@ -1,5 +1,6 @@
 //: Playground - noun: a place where people can play
 // 打印1到最大的n位数
+// 实际运用的话 判断长度在Int范围内 还是普通打印，超出正常范围再用特殊的数组打印法
 
 import UIKit
 
